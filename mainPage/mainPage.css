@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+
+  -ms-overflow-style: none;
+  z-index: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.blue_violet_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-color: blueviolet;
+  z-index: -1;
+
+  /* IMAGE Properties*/
+  background-image: url(imgPurple.webp);
+  background-size: 500px;
+  background-position: 80% 60%;
+  background-repeat: no-repeat;
+}
+li {
+  list-style: none;
+  padding: 15px;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+a:hover {
+  color: blueviolet;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.background_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; /* Height of the navigation bar */
+
+  background-color: blueviolet;
+  z-index: 2;
+  transition: height 0.3s ease-in-out; /* change height on scroll */
+}
+
+.navbar {
+  position: fixed; /* Fix the navbar position */
+  top: 0; /* Stick it to the top of the page */
+  width: 100%; /* Occupy the full width of the viewport */
+  height: 60px; /* Set the height of the navbar */
+  max-width: 1200px; /* Limit the width of the navbar */
+  margin: 0 auto; /* Center the navbar horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: blueviolet;
+  z-index: 2;
+  transition: height 0.3s ease-in-out; /* change height on scroll */
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 100px;
+}
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fafafa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.action_btn:active {
+  transform: scale(1.05);
+}
+/*DropDown Menu*/
+.dropdown_menu {
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.322);
+
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s;
+  height: 245px;
+  z-index: 2;
+}
+.dropdown_menu.open {
+  height: 245px;
+}
+
+.dropdown_menu li {
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero */
+#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  #hero h1,
+  h2 {
+    display: none; /* Hide the text on smaller screens */
+  }
+}
+
+/* search bar */
+.search-bar {
+  margin-top: 0px; /* Adjust the margin as needed */
+  text-align: center; /* Center the search bar */
+  position: absolute;
+  top: 200px; /* Position below the nav bar */
+  left: 0;
+  margin: 0;
+  padding: 100px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px; /* Adjust padding as needed */
+  border: 3px solid rgba(0, 0, 0, 0.313); /* Add border */
+  border-radius: 40px; /* Add border radius */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .search-bar {
+    top: calc(
+      0.001px + 0.001px
+    ); /* Adjusted top position below the navbar with some spacing */
+    padding: 30vh; /* Adjusted padding for smaller screens */
+  }
+}
+/* Positioning for full-width screens */
+@media (min-width: 769px) {
+  #hero h1 {
+    position: absolute;
+    top: 135px; /* Position below the nav bar */
+    left: 0;
+    margin: 0;
+    padding: 100px; /* Optional: Add padding for better readability */
+  }
+}
+@media (min-width: 769px) {
+  #hero h2 {
+    position: absolute;
+    top: 100px; /* Position below the nav bar */
+    left: 0;
+    margin: 0;
+    padding: 100px; /* Optional: Add padding for better readability */
+  }
+}
+/*To make responsive*/
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  /* Initially hide the dropdown menu on smaller screens */
+  .dropdown_menu {
+    display: none;
+  }
+}
+
+/* Show the dropdown menu when the toggle button is clicked */
+.dropdown_menu.open {
+  display: block;
+}
+
+@media (min-width: 993px) {
+  /* Hide the dropdown menu on full-size screens */
+  .dropdown_menu {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
+}
+
+/*ANIMATION*/
