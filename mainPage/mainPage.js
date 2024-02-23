@@ -10,28 +10,6 @@ toggleBtn.onclick = function () {
   toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
 };
 
-// Get the hero text element
-const heroText = document.querySelector("#hero h1");
-
-// Set the initial values for x and y
-let heroTextX = 0;
-let heroTextY = 0;
-
-// Update the CSS variables
-heroText.style.setProperty("--hero-text-x", heroTextX + "px");
-heroText.style.setProperty("--hero-text-y", heroTextY + "px");
-
-// Dynamically adjust the position
-function moveHeroText(x, y) {
-  heroTextX = x;
-  heroTextY = y;
-  heroText.style.setProperty("--hero-text-x", heroTextX + "px");
-  heroText.style.setProperty("--hero-text-y", heroTextY + "px");
-}
-
-// Example: Move the hero text to 10% from the left and 80% from the top
-moveHeroText(10, 80);
-
 /* Animation */
 window.addEventListener("scroll", function () {
   var navbar = document.querySelector(".navbar");
