@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 body {
@@ -23,15 +23,14 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90vh;
+  height: 110vh;
   background-color: blueviolet;
   z-index: -2;
-
   /* Combine image and linear gradient */
   background-image: url(imgPurple.webp),
-    linear-gradient(to bottom, rgb(137, 43, 226) 75%, rgb(255, 255, 255) 100%);
-  background-size: 550px, 100%; /* Set background size for both the image and gradient */
-  background-position: 80% 60%, bottom;
+    linear-gradient(to bottom, rgb(137, 43, 226) 70%, rgb(255, 255, 255) 90%);
+  background-size: 600px, 100%; /* Set background size for both the image and gradient */
+  background-position: 90% 50%, bottom;
   background-repeat: no-repeat;
 }
 /* Navbar list */
@@ -90,6 +89,45 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
   display: flex;
+}
+.blob {
+  position: absolute;
+  opacity: 0.5;
+  width: 400px;
+  aspect-ratio: 1/1;
+  animation: animate 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate
+    forwards;
+  filter: blur(40px);
+  z-index: -2;
+  background: linear-gradient(
+    47deg,
+    rgba(255, 88, 139, 1) 35%,
+    rgb(0 164 173) 67%,
+    rgba(118, 74, 166, 1) 81%
+  );
+
+  /*  Optional  */
+  /* box-shadow: inset 50px 50px 17px 0px #ff588b,
+    inset 100px 100px 17px 0px #66319f; */
+}
+
+@keyframes animate {
+  0% {
+    translate: 40% -25%;
+    border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+  }
+  50% {
+    translate: 0% 13%;
+    border-radius: 20% 71% 47% 70% / 81% 15% 22% 54%;
+    rotate: 41deg;
+    scale: 1.15;
+  }
+  100% {
+    translate: -45% 39%;
+    border-radius: 100% 75% 92% 74% / 60% 80% 30% 70%;
+    rotate: -60deg;
+    scale: 1.05;
+  }
 }
 
 /* Navbar content */
@@ -292,4 +330,42 @@ footer {
   color: lightgray;
 }
 
-/*ANIMATION*/
+/**-----------------------------MAIN CONTENT OF HERO PAGE/LANDING PAGE----------------------- */
+#hero-main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#h1-heroe-main {
+  text-align: center;
+  font-size: 100px;
+  font-family: "Space Grotesk", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+/**---------popular services----------- */
+#div-popular-services ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#div-popular-services li {
+  width: calc(
+    (254.8px - 4px)
+  ); /* Subtract twice the border thickness from the container width and divide by the number of items */
+  height: calc(
+    (245px - 2px)
+  ); /* Subtract twice the border thickness from the container height and divide by the number of items */
+  text-align: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+#div-popular-services li a {
+  display: block;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+}
+/**---------How it works?----------- */
