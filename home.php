@@ -59,7 +59,7 @@
 
     <?php require'database.php'?>
     <?php require'feedback.php'?>
-    <?php require'feedback.php'?>
+    <?php require'submit_feedback.php'?>
     <?php require'support.php'?>
     <?php require'footer.php'?>
 

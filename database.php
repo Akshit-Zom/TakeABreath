@@ -62,14 +62,16 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS bookings (
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS reviews (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    service_provider_id INT NOT NULL,
+    -- user_id INT NOT NULL,
+    -- service_provider_id INT NOT NULL,
     rating INT NOT NULL,
     comment TEXT,
-    date_posted DATETIME NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (service_provider_id) REFERENCES service_providers(id)
+    date_posted DATETIME NOT NULL
+    -- FOREIGN KEY (user_id) REFERENCES users(id),
+    -- FOREIGN KEY (service_provider_id) REFERENCES service_providers(id)
 )");
+
+
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
