@@ -12,11 +12,16 @@ try {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $stmt = $pdo->prepare("INSERT INTO reviews (rating, comment, date_posted) VALUES (?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO service_providers (provider_name, provider_contact, provider_email, service_category, description, hourly_rate, city, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $stmt->bindParam(1, $_POST['rating']);
-    $stmt->bindParam(2, $_POST['comment']);
-    $stmt->bindParam(3, $_POST['date_posted']);
+    $stmt->bindParam(1, $_POST['provider_name']);
+    $stmt->bindParam(2, $_POST['provider_contact']);
+    $stmt->bindParam(3, $_POST['provider_email']);
+    $stmt->bindParam(4, $_POST['service_category']);
+    $stmt->bindParam(5, $_POST['description']);
+    $stmt->bindParam(6, $_POST['hourly_rate']);
+    $stmt->bindParam(7, $_POST['city']);
+    $stmt->bindParam(8, $_POST['availability']);
 
     try {
         $stmt->execute();
@@ -32,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Services</title>
     <style>
         table {
             border-collapse: collapse;
@@ -53,13 +58,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2 style="margin-left: 350px;">Reviews</h2>
+    <h2 style="margin-left: 350px;">Our Services</h2>
     <table style="margin-left: 350px; width: 800px;">
         <thead>
             <tr>
-                <th>rating</th>
-                <th>comment</th>
-                <th>date posted</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Hourly rate</th>
+                <th>City</th>
+                <th>Availability</th>
             </tr>
         </thead>
         <tbody>
@@ -74,13 +84,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $sql = "SELECT * FROM reviews";
+                $sql = "SELECT * FROM service_providers";
                 $stmt = $pdo->query($sql);
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
-                    echo "<td>" . $row['rating'] . "</td>";
-                    echo "<td>" . $row['comment'] . "</td>";
-                    echo "<td>" . $row['date_posted'] . "</td>";
+                    echo "<td>" . $row['provider_name'] . "</td>";
+                    echo "<td>" . $row['provider_contact'] . "</td>";
+                    echo "<td>" . $row['provider_email'] . "</td>";
+                    echo "<td>" . $row['service_category'] . "</td>";
+                    echo "<td>" . $row['description'] . "</td>";
+                    echo "<td>" . $row['hourly_rate'] . "</td>";
+                    echo "<td>" . $row['city'] . "</td>";
+                    echo "<td>" . $row['availability'] . "</td>";
                     echo "</tr>";
                   
                 }

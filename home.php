@@ -49,19 +49,23 @@
         </div>
         <h1 id="h1-heroe-main">Explore services</h1>
         <div>
-
+        <?php require'submit_service.php'?>
         </div>
         <h1 id="h1-heroe-main">Want to start working?</h1>
         <div>
-
+        <?php require'addservice.php'?>
+       
         </div>
     </section>
 
     <?php require'database.php'?>
-    <?php require'feedback.php'?>
     <?php require'submit_feedback.php'?>
-    <?php require'support.php'?>
+    <?php require'feedback.php'?>
+  
+    <br>
+    <br>
     <?php require'footer.php'?>
+
 
    
 </body>

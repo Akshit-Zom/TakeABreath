@@ -26,15 +26,18 @@ try {
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS service_providers (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
+    -- user_id INT NOT NULL,
+    provider_name VARCHAR(50) NOT NULL,
+    provider_contact INT NOT NULL,
+    provider_email VARCHAR(50) NOT NULL,
     service_category VARCHAR(255) NOT NULL,
     description TEXT,
     hourly_rate DECIMAL(10, 2),
-    latitude DECIMAL(10, 8),
-    longitude DECIMAL(11, 8),
+    -- latitude DECIMAL(10, 8),
+    -- longitude DECIMAL(11, 8),
     city VARCHAR(255) NOT NULL,
-    availability TEXT,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    availability VARCHAR(50) NOT NULL
+    -- FOREIGN KEY (user_id) REFERENCES users(id)
 )");
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS services (
