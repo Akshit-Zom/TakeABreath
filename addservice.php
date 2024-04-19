@@ -1,4 +1,5 @@
 <?php
+require 'db/db_config.php'; 
 
 echo '<section id="div-add-service" class="add-service-section">
             <div class="container">

@@ -1,4 +1,5 @@
 <?php
+include 'db/db_config.php';
 
 $currentDate = date('Y-m-d H:i:s');
 echo '<section id="div-feedback" class="feedback-section">

@@ -1,15 +1,5 @@
 <?php
-$host = 'localhost';
-$dbname = 'takeabreath';
-$username = 'root';
-$password = '';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Error: Could not connect. " . $e->getMessage());
-}
+require 'db/db_config.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO service_providers (provider_name, provider_contact, provider_email, service_category, description, hourly_rate, city, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -74,11 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </thead>
         <tbody>
             <?php
-
-            $host = 'localhost';
-            $dbname = 'takeabreath';
-            $username = 'root';
-            $password = '';
 
             try {
                 $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
