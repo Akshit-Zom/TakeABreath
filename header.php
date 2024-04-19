@@ -9,6 +9,7 @@ echo '<header>
             <li><a href="addservice.php">Add Service</a></li>
             <li><a href="#div-about">About</a></li>
             <li><a href="feedback.php">Feedback</a></li>
+            <li><a href="feedbackDisplay.php">View Feedback</a></li>
         </ul>
         <a href="login.php" class="action_btn">Login</a>
         <div class="toggle_btn">
