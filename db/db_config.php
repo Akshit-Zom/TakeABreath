@@ -2,7 +2,7 @@
 // Edit these variables with your own database credentials
 $host = "localhost";
 $username = "root";
-$password = "qazplm123@";
+$password = "hello123";
 $dbname = "takeabreath"; 
 
 try {

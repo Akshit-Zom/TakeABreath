@@ -78,24 +78,16 @@
 <?php include 'header.php'; ?>
 <div class="service-container">
 <?php
-// Connect to the database
-$host = "localhost";
-$username = "root";
-$password = "qazplm123@";
-$dbname = "takeabreath"; 
+include 'db/db_config.php';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Retrieve data from the database
     $stmt = $conn->prepare("SELECT * FROM services");
     $stmt->execute();
 
-    // Check if there are any rows returned
     if ($stmt->rowCount() > 0) {
-        // Output data of each row
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<div class="service">';
             // echo '<img src="service_image.jpg" alt="Service Image">';
@@ -114,14 +106,11 @@ try {
     echo "Error: " . $e->getMessage();
 }
 
-// Close the database connection (not necessary with PDO)
-// $conn = null;
 ?>
 
 </div>
 
 <?php
-// Include the footer
 include 'footer.php';
 ?>
 </body>
