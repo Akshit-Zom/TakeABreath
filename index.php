@@ -35,7 +35,6 @@
             <h1>TakeAbreath</h1>
             <div class="search-bar">
                 <input type="text" placeholder="Search..."><br><br>
-
             </div>
         </section>
 
@@ -69,9 +68,9 @@
         </section>
         <h1 id="h1-heroe-main">Want to start working?</h1>
         <div>
-        <?php require'addservice.php'?>
+        <!-- <?php require'addservice.php'?> -->
         </div>
-    <?php require'feedback.php'?>
+    <!-- <?php require'feedback.php'?> -->
     </section>
     <br>
     <br>

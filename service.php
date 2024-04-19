@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 100px;
     }
 
     .service {
@@ -75,13 +75,13 @@
 </style>
 </head>
 <body>
-
+<?php include 'header.php'; ?>
 <div class="service-container">
 <?php
 // Connect to the database
 $host = "localhost";
 $username = "root";
-$password = "qazplm123@";
+$password = "hello123";
 $dbname = "takeabreath"; 
 
 try {

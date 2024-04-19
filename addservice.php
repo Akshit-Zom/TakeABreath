@@ -1,8 +1,9 @@
 <?php
 require 'db/db_config.php'; 
+include 'header.php';
 
 echo '<section id="div-add-service" class="add-service-section">
-            <div class="container">
+            <div class="container" style="padding-top: 100px;">
                 <h1>Add Service</h1>
           
                 </br>
