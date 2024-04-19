@@ -185,7 +185,7 @@
 
     </main>
 
-    <br><br><br>
+    <br><br>
     <section id="hero-main">
        <section id="how-it-works">
             <h1 id="h1-heroe-main">How it works? </h1>
@@ -232,6 +232,10 @@
                 professional looking for work or an expert in your field, we've got opportunities waiting for you.</p>
 
             <p class="more">Want to learn more about our platform? <br><a href="addservice.php">Click here</a></p>
+        </div>
+        <div id="feedbackDisplay">
+            <h1 id="h1-heroe-main">Feedback</h1>
+            <?php require 'feedbackDisplay.php'?>
         </div>
     </section>
     <br>
