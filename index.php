@@ -76,14 +76,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 70px;
+  margin-bottom: 40px;
 }
 
 .image-wrapper {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -177,8 +177,8 @@
             <h1>TakeAbreath</h1>
             <div class="search-bar">
     <form action="search_service.php" method="get">
-        <input type="text" name="search" placeholder="Search services...">
-        <button type="submit">Search</button>
+    <input type="text" name="search" placeholder="Search services..." required style="position: relative;">
+        <button type="submit" style="border-radius: 10px; background-color: white; border: 2px solid purple; color: black;">Search</button>
     </form>
 </div>
         </section>
@@ -215,7 +215,7 @@
             <h1 id="h1-heroe-main">Explore services</h1>
             <div class="image-container">
                 <div class="image-wrapper">
-                    <img src="/TakeABreath/assets/img/imgPurple.jpg" alt="Service 1" class="service-image">
+                    <img src="/TakeABreath/assets/img/plumbing1.jpg" alt="Service 1" class="service-image">
                 </div>
                 <div class="image-wrapper">
                     <img src="/TakeABreath/assets/img/tech.jpeg" alt="" class="service-image">
