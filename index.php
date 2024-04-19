@@ -18,8 +18,150 @@
         href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@200&family=Poppins:wght@200&family=Roboto+Mono:wght@140&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
         <title>TakeABreath</title>
-    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+            #how-it-works {
+        padding: 50px 0;
+        text-align: center;
+        }
 
+        #how-it-works h1 {
+        font-size: 10REM;
+        margin-bottom: 30px;
+        }
+
+        .div-about {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        }
+
+        .step {
+        width: 300px;
+        padding: 20px;
+        border: 2px solid blueviolet;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        }
+
+        .step:hover {
+        transform: translateY(-5px);
+        }
+
+        .step h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: blueviolet;
+        }
+
+        .step p {
+        font-size: 1.1rem;
+        }
+
+        /* Image styling */
+        .step img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        }
+        #explore-services {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper:hover .service-image {
+  transform: scale(1.1);
+}
+
+.image-wrapper:hover .service-image:first-child {
+  transform: translateX(120%);
+}
+
+.image-wrapper:hover .service-image:last-child {
+  transform: translateX(-120%);
+}
+
+.explore-btn {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: darkviolet;
+}
+#start-working {
+  text-align: center;
+  padding: 50px 0;
+}
+
+#start-working h1 {
+  font-size: 100PX;
+  margin-bottom: 20px;
+}
+
+#start-working p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#start-working .action_btn {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#start-working .action_btn:hover {
+  background-color: darkviolet;
+}
+
+#start-working a {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+#start-working a:hover {
+  text-decoration: underline;
+}
+
+
+    </style>
 </head>
 
 <body>
@@ -69,11 +211,28 @@
                 </div>
             </div>
         </section>
-        <h1 id="h1-heroe-main">Want to start working?</h1>
-        <div>
-        <!-- <?php require'addservice.php'?> -->
+        <section id="explore-services">
+            <h1 id="h1-heroe-main">Explore services</h1>
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="/TakeABreath/assets/img/imgPurple.jpg" alt="Service 1" class="service-image">
+                </div>
+                <div class="image-wrapper">
+                    <img src="/TakeABreath/assets/img/tech.jpeg" alt="" class="service-image">
+                </div>
+                <div class="image-wrapper">
+                    <img src="/TakeABreath/assets/img/img.jpg" alt="Service 3" class="service-image">
+                </div>
+            </div>
+            <a href="service.php" class="explore-btn">Explore Now</a>
+        </section>
+        <div id="start-working">
+            <h1 id="h1-heroe-main">Work with us</h1>
+            <p>Join our platform to start offering your services and connecting with clients. Whether you're a
+                professional looking for work or an expert in your field, we've got opportunities waiting for you.</p>
+
+            <p class="more">Want to learn more about our platform? <br><a href="addservice.php">Click here</a></p>
         </div>
-    <!-- <?php require'feedback.php'?> -->
     </section>
     <br>
     <br>
