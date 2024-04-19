@@ -34,8 +34,11 @@
             </h2>
             <h1>TakeAbreath</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Search..."><br><br>
-            </div>
+    <form action="search_service.php" method="get">
+        <input type="text" name="search" placeholder="Search services...">
+        <button type="submit">Search</button>
+    </form>
+</div>
         </section>
 
     </main>
