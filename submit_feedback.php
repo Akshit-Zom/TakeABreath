@@ -1,82 +1,51 @@
 <?php
-require 'db/db_config.php'; 
+require 'db/db_config.php'; // Include your database connection file
 
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $stmt = $pdo->prepare("INSERT INTO reviews (rating, comment, date_posted) VALUES (?, ?, ?)");
+    // Retrieve form data
+    $rating = $_POST['rating'];
+    $comment = $_POST['comment'];
+    $date_posted = $_POST['date_posted'];
 
-    $stmt->bindParam(1, $_POST['rating']);
-    $stmt->bindParam(2, $_POST['comment']);
-    $stmt->bindParam(3, $_POST['date_posted']);
+    // Prepare SQL statement to insert data into the database
+    $sql = "INSERT INTO feedback (rating, comment, date_posted)
+            VALUES (:rating, :comment, :date_posted)";
 
-    try {
-        $stmt->execute();
-        echo "";
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+    // Prepare the SQL statement
+    $stmt = $conn->prepare($sql);
+
+    // Bind parameters
+    $stmt->bindParam(':rating', $rating);
+    $stmt->bindParam(':comment', $comment);
+    $stmt->bindParam(':date_posted', $date_posted);
+    // Execute the statement
+    if ($stmt->execute()) {
+        // Set a flag to display the success message
+        $successMessage = "Feedback has been submited";
+
+        // Redirect back to index.php after a delay
+        header("Refresh: 1; URL=index.php");
+    } else {
+        // Set a flag to display the error message
+        $errorMessage = "Error occurred while adding the feedback";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th,
-        td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
+   
 </head>
-
 <body>
-    <h2 style="margin-left: 350px;">Reviews</h2>
-    <table style="margin-left: 350px; width: 800px;">
-        <thead>
-            <tr>
-                <th>rating</th>
-                <th>comment</th>
-                <th>date posted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-
-            try {
-                $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                $sql = "SELECT * FROM reviews";
-                $stmt = $pdo->query($sql);
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td>" . $row['rating'] . "</td>";
-                    echo "<td>" . $row['comment'] . "</td>";
-                    echo "<td>" . $row['date_posted'] . "</td>";
-                    echo "</tr>";
-                  
-                }
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-            ?>
-        </tbody>
-    </table>
-    <br>
-    <br>
+    <?php if(isset($successMessage)): ?>
+    <script>
+        alert("<?php echo $successMessage; ?>");
+    </script>
+    <?php endif; ?>
 </body>
-
 </html>
+

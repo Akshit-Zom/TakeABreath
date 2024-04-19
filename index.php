@@ -43,28 +43,36 @@
 
     <br><br><br>
     <section id="hero-main">
-       <?php require'service.php'?>
-       
-
-        <h1 id="h1-heroe-main">How it works? </h1>
-        <div class="div-about" id="div-about">
-
-        </div>
-        <h1 id="h1-heroe-main">Explore services</h1>
-        <div>
-        <?php require'submit_service.php'?>
-        </div>
+       <section id="how-it-works">
+            <h1 id="h1-heroe-main">How it works? </h1>
+            <div class="div-about" id="div-about">
+                <div class="step">
+                    <h2>Step 1: Sign Up</h2>
+                    <p>Create an account with TakeAbreath to get started. It only takes a few minutes!</p>
+                </div>
+                <div class="step">
+                    <h2>Step 2: Explore Services</h2>
+                    <p>Browse through our wide range of services including plumbing, electrician, cleaning, and
+                        woodwork.</p>
+                </div>
+                <div class="step">
+                    <h2>Step 3: Book a Service</h2>
+                    <p>Once you've found the service you need, simply book it through our platform. It's quick and
+                        easy!</p>
+                </div>
+                <div class="step">
+                    <h2>Step 4: Enjoy!</h2>
+                    <p>Sit back, relax, and let our professionals take care of your needs. Enjoy a hassle-free
+                        experience with TakeAbreath.</p>
+                </div>
+            </div>
+        </section>
         <h1 id="h1-heroe-main">Want to start working?</h1>
         <div>
         <?php require'addservice.php'?>
-       
         </div>
-    </section>
-
-    
-    <?php require'submit_feedback.php'?>
     <?php require'feedback.php'?>
-  
+    </section>
     <br>
     <br>
     <?php require'footer.php'?>
